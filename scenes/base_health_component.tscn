@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cgjyc7vot8tly"]
+
+[ext_resource type="Script" uid="uid://bulfedve2ullu" path="res://scripts/base_health_component.gd" id="1_2wkkf"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2wkkf"]
+properties/0/path = NodePath(".:hp")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="BaseHealthComponent" type="Node" unique_id=1997607798]
+script = ExtResource("1_2wkkf")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=195922326]
+replication_config = SubResource("SceneReplicationConfig_2wkkf")

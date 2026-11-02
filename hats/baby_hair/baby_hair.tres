@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hat" format=3 uid="uid://c845fsqkum2nw"]
+
+[ext_resource type="Texture2D" uid="uid://bawfhm1mkprjv" path="res://hats/baby_hair/baby_hair.png" id="1_316nm"]
+[ext_resource type="Script" uid="uid://ci48euok4xfmc" path="res://hats/hat.gd" id="1_jf7rh"]
+[ext_resource type="PackedScene" uid="uid://cb1th0f6vica3" path="res://hats/baby_hair/baby_hair.glb" id="2_gse28"]
+
+[resource]
+script = ExtResource("1_jf7rh")
+scene = ExtResource("2_gse28")
+icon = ExtResource("1_316nm")
+metadata/_custom_type_script = "uid://ci48euok4xfmc"

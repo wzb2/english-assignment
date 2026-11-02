@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://nvao0xtw6kq4"]
+
+[ext_resource type="PackedScene" uid="uid://bbvn0xpufsj1b" path="res://scenes/windowless_room.tscn" id="1_85yof"]
+[ext_resource type="PackedScene" uid="uid://c0epychsymp3s" path="res://scenes/window.tscn" id="1_ffxv4"]
+
+[node name="WindowlessRoom" type="Node3D" unique_id=1824407382]
+
+[node name="Room" parent="." unique_id=521753433 instance=ExtResource("1_85yof")]
+
+[node name="Window" parent="Room/Room" parent_id_path=PackedInt32Array(521753433, 1857452327) index="3" unique_id=1286522072 instance=ExtResource("1_ffxv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052, -5.0579853)
+
+[node name="Window2" parent="Room/Room" parent_id_path=PackedInt32Array(521753433, 1857452327) index="4" unique_id=298878634 instance=ExtResource("1_ffxv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.052, -5.0579853)
+
+[node name="Window3" parent="Room/Room" parent_id_path=PackedInt32Array(521753433, 1857452327) index="5" unique_id=1870897222 instance=ExtResource("1_ffxv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.052, -5.0579853)
+
+[editable path="Room"]

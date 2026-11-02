@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://drvkc04yto6ri"]
+
+[ext_resource type="Script" uid="uid://dnsh3xoyf4ja3" path="res://inventory/items/pistol/pistol.gd" id="1_a2rs8"]
+[ext_resource type="Resource" uid="uid://dmxq1tn8qfq85" path="res://inventory/items/pistol/pistol.tres" id="2_vsycs"]
+[ext_resource type="Script" uid="uid://bckobx7fm17y8" path="res://scripts/floater.gd" id="3_5ux66"]
+[ext_resource type="Script" uid="uid://cos8fmpnnuctm" path="res://scripts/item_interact_area.gd" id="3_6pisv"]
+[ext_resource type="Script" uid="uid://beckuqbvjtgr7" path="res://scripts/floater_mesh.gd" id="4_4b2ik"]
+[ext_resource type="PackedScene" uid="uid://tsvbndyft63a" path="res://scenes/floater_point.tscn" id="5_6pisv"]
+[ext_resource type="Script" uid="uid://dq1grg5euo44f" path="res://scripts/angular_spring.gd" id="7_tuvnm"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4b2ik"]
+properties/0/path = NodePath(".:current_hand")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:synced_position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:synced_rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsycs"]
+albedo_color = Color(0.37, 0.37, 0.37, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vsycs"]
+material = SubResource("StandardMaterial3D_vsycs")
+size = Vector3(0.03, 0.3, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pisv"]
+albedo_color = Color(1, 0.7166667, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuvnm"]
+material = SubResource("StandardMaterial3D_6pisv")
+size = Vector3(0.01, 10, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ux66"]
+albedo_color = Color(0.37, 0.37, 0.37, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ux66"]
+material = SubResource("StandardMaterial3D_5ux66")
+size = Vector3(0.15, 0.03, 0.03)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vsycs"]
+size = Vector3(0.146, 0.302, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ux66"]
+size = Vector3(0.24, 0.403, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4b2ik"]
+size = Vector3(0.1, 0.3, 0.05)
+
+[node name="Pistol" type="RigidBody3D" unique_id=1979443776 node_paths=PackedStringArray("hand_spring", "mesh_instances", "interact_area")]
+mass = 0.075
+continuous_cd = true
+script = ExtResource("1_a2rs8")
+item_resource = ExtResource("2_vsycs")
+hand_spring = NodePath("AngularSpring")
+mesh_instances = [NodePath("MeshInstance3D"), NodePath("MeshInstance3D2")]
+interact_area = NodePath("Area3D")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2092149202]
+replication_config = SubResource("SceneReplicationConfig_4b2ik")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=273857258]
+transform = Transform3D(1.9470718e-07, 0, -1, 1, -4.371139e-08, 1.9470718e-07, -4.371139e-08, -1, -8.510921e-15, 0, 0.04225023, -0.11211872)
+mesh = SubResource("BoxMesh_vsycs")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=553237877]
+transform = Transform3D(1.9470718e-07, 0, -1, 1, -4.371139e-08, 1.9470718e-07, -4.371139e-08, -1, -8.510921e-15, 0, 0.042, -5.108)
+visible = false
+mesh = SubResource("BoxMesh_tuvnm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1424857930]
+transform = Transform3D(1.9470718e-07, 0, -1, 1, -4.371139e-08, 1.9470718e-07, -4.371139e-08, -1, -8.510921e-15, 0, -0.023749754, 0.036881268)
+mesh = SubResource("BoxMesh_5ux66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2057520381]
+transform = Transform3D(-4.371139e-08, 0, 1, -1, -4.371139e-08, -4.371139e-08, 4.371139e-08, -1, 1.9106855e-15, 0, -0.007, -0.095)
+shape = SubResource("BoxShape3D_vsycs")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1670246375]
+transform = Transform3D(-4.371139e-08, 0, 1, -1, -4.371139e-08, -4.371139e-08, 4.371139e-08, -1, 1.9106855e-15, 0, -0.068, 0.009)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_6pisv")
+metadata/_custom_type_script = "uid://cos8fmpnnuctm"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=712968541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0492873, 0.115496, 0)
+shape = SubResource("BoxShape3D_5ux66")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=202763670]
+transform = Transform3D(-4.371139e-08, 0, 1, -1, -4.371139e-08, -4.371139e-08, 4.371139e-08, -1, 1.9106855e-15, -0.011147674, 0.04225023, -0.26830873)
+visible = false
+light_color = Color(1, 0.752, 0.38, 1)
+omni_range = 3.0
+omni_shadow_mode = 0
+
+[node name="BulletSpawnPose" type="Marker3D" parent="." unique_id=1435085473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011147674, 0.041947618, -0.29858872)
+
+[node name="Floater" type="Node3D" parent="." unique_id=1648335845]
+script = ExtResource("3_5ux66")
+relative_density = 5.0
+metadata/_custom_type_script = "uid://bckobx7fm17y8"
+
+[node name="FloaterMesh" type="MeshInstance3D" parent="Floater" unique_id=636577459]
+transform = Transform3D(-4.371139e-08, 0, 1, -1, -4.371139e-08, -4.371139e-08, 4.371139e-08, -1, 1.9106855e-15, 0, -0.0027497262, -0.10801774)
+mesh = SubResource("BoxMesh_4b2ik")
+script = ExtResource("4_4b2ik")
+metadata/_custom_type_script = "uid://beckuqbvjtgr7"
+
+[node name="FloaterPoint" parent="Floater/FloaterMesh" unique_id=1158466977 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.15, 0.025)
+
+[node name="FloaterPoint2" parent="Floater/FloaterMesh" unique_id=983312903 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.15, -0.025)
+
+[node name="FloaterPoint3" parent="Floater/FloaterMesh" unique_id=1008690273 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.15, 0.025)
+
+[node name="FloaterPoint4" parent="Floater/FloaterMesh" unique_id=2101617666 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.15, -0.025)
+
+[node name="FloaterPoint5" parent="Floater/FloaterMesh" unique_id=856251156 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.15, 0.025)
+
+[node name="FloaterPoint6" parent="Floater/FloaterMesh" unique_id=1219736609 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.15, -0.025)
+
+[node name="FloaterPoint7" parent="Floater/FloaterMesh" unique_id=667031503 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.15, 0.025)
+
+[node name="FloaterPoint8" parent="Floater/FloaterMesh" unique_id=1668935699 instance=ExtResource("5_6pisv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.15, -0.025)
+
+[node name="AngularSpring" type="Node" parent="." unique_id=1754242573 node_paths=PackedStringArray("body_to_spring")]
+script = ExtResource("7_tuvnm")
+body_to_spring = NodePath("..")
+spring_stiffness = 3.5
+spring_damping = 0.02
+metadata/_custom_type_script = "uid://dq1grg5euo44f"

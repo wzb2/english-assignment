@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://y8wb8uv7o2bq"]
+
+[ext_resource type="PackedScene" uid="uid://nvao0xtw6kq4" path="res://scenes/room.tscn" id="1_0eht4"]
+[ext_resource type="PackedScene" uid="uid://bbvn0xpufsj1b" path="res://scenes/windowless_room.tscn" id="2_tf0pj"]
+[ext_resource type="PackedScene" uid="uid://sey7x608cfwk" path="res://scenes/ceiling_light.tscn" id="3_e8o3t"]
+[ext_resource type="Material" uid="uid://bm04fcydblc76" path="res://materials/wallpaper.tres" id="3_tf0pj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o0h44"]
+size = Vector3(41.2, 1, 25.6)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tkulu"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t2idr"]
+noise = SubResource("FastNoiseLite_tkulu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itc6m"]
+albedo_color = Color(0.38675654, 0.38675663, 0.3867566, 1)
+albedo_texture = SubResource("NoiseTexture2D_t2idr")
+uv1_scale = Vector3(41.2, 25.6, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s1rbi"]
+material = SubResource("StandardMaterial3D_itc6m")
+size = Vector3(41.2, 0.05, 25.6)
+
+[node name="Wing" type="Node3D" unique_id=76042824]
+
+[node name="Room" parent="." unique_id=1824407382 instance=ExtResource("1_0eht4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.326022, 1.9699552, -7.4240813)
+
+[node name="Room2" parent="." unique_id=408089255 instance=ExtResource("1_0eht4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0920057, 1.9699552, -7.4240813)
+
+[node name="Room3" parent="." unique_id=2125999657 instance=ExtResource("1_0eht4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1367083, 1.9699552, -7.4240813)
+
+[node name="Room4" parent="." unique_id=1385357005 instance=ExtResource("1_0eht4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.370725, 1.9699552, -7.4240813)
+
+[node name="WindowlessRoom" parent="." unique_id=521753433 instance=ExtResource("2_tf0pj")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.370725, 1.9699552, 7.5759206)
+
+[node name="WindowlessRoom2" parent="." unique_id=1027205576 instance=ExtResource("2_tf0pj")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1367083, 1.9699552, 7.5759187)
+
+[node name="CSGBox3D3" parent="WindowlessRoom2/Room" parent_id_path=PackedInt32Array(1027205576, 1857452327) index="1" unique_id=1227413118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.291, 5.285)
+size = Vector3(10, 2.595, 2.547)
+material = ExtResource("3_tf0pj")
+
+[node name="Door" parent="WindowlessRoom2" index="1" unique_id=1163805655]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" parent="WindowlessRoom2/Door" index="0" unique_id=334200659]
+disabled = true
+
+[node name="WindowlessRoom3" parent="." unique_id=1622244166 instance=ExtResource("2_tf0pj")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.0920057, 1.9699552, 7.5759187)
+
+[node name="WindowlessRoom4" parent="." unique_id=200092293 instance=ExtResource("2_tf0pj")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -15.326022, 1.9699552, 7.575917)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1040042082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.508, 0)
+size = Vector3(41, 0.25, 10)
+
+[node name="CeilingLight" parent="CSGBox3D" unique_id=978447064 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13576698, 0)
+
+[node name="CeilingLight2" parent="CSGBox3D" unique_id=100665135 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.13576698, 0)
+
+[node name="CeilingLight3" parent="CSGBox3D" unique_id=1582228013 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.13576698, 0)
+
+[node name="CeilingLight4" parent="CSGBox3D" unique_id=1944107118 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.13576698, 0)
+
+[node name="CeilingLight5" parent="CSGBox3D" unique_id=376477602 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.13576698, 0)
+
+[node name="CeilingLight6" parent="CSGBox3D" unique_id=706138812 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.13576698, 0)
+
+[node name="CeilingLight7" parent="CSGBox3D" unique_id=1628916302 instance=ExtResource("3_e8o3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.13576698, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1670542027]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=984857863]
+shape = SubResource("BoxShape3D_o0h44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1180881351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+mesh = SubResource("BoxMesh_s1rbi")
+
+[editable path="WindowlessRoom2"]
+[editable path="WindowlessRoom2/Door"]

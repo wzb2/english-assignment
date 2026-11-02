@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tsvbndyft63a"]
+
+[ext_resource type="Script" uid="uid://dbbyntncuvrnf" path="res://scripts/floater_point.gd" id="1_kmais"]
+
+[node name="FloaterPoint" type="Marker3D" unique_id=1158466977]
+process_mode = 4
+physics_interpolation_mode = 2
+script = ExtResource("1_kmais")

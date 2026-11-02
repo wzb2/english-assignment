@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bdjcnjewp64a4"]
+
+[ext_resource type="Script" uid="uid://cebuii4pur5df" path="res://scripts/bomb.gd" id="1_4kkau"]
+[ext_resource type="PackedScene" uid="uid://bjk0ue7v34otg" path="res://scenes/bomb_fx.tscn" id="2_vpdcx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4kkau"]
+radius = 20.0
+
+[node name="Bomb" type="Area3D" unique_id=1057162179]
+script = ExtResource("1_4kkau")
+fx_scene = ExtResource("2_vpdcx")
+metadata/_custom_type_script = "uid://cebuii4pur5df"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1481208078]
+shape = SubResource("SphereShape3D_4kkau")

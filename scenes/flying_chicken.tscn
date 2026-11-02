@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dbepnfahyqr6v"]
+
+[ext_resource type="Script" uid="uid://beqiyhxlbe24t" path="res://scripts/flying_chicken.gd" id="1_upba1"]
+[ext_resource type="PackedScene" uid="uid://sybg0gdc5j8e" path="res://models/flying_chicken.glb" id="2_l35q3"]
+[ext_resource type="PackedScene" uid="uid://dwb2a7jrubxsb" path="res://scenes/rigidbody_health_component.tscn" id="3_upba1"]
+[ext_resource type="Script" uid="uid://vwa00jlqqm7a" path="res://scripts/targeting_component.gd" id="4_p365t"]
+[ext_resource type="PackedScene" uid="uid://bdjcnjewp64a4" path="res://scenes/bomb.tscn" id="5_8qucf"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_p365t"]
+properties/0/path = NodePath(".:synced_position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:synced_rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l35q3"]
+albedo_color = Color(0.6, 0.41240004, 0.198, 1)
+metallic = 0.5
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upba1"]
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p365t"]
+albedo_color = Color(1, 0.73333335, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l35q3"]
+radius = 0.19042969
+height = 1.3
+
+[node name="FlyingChicken" type="RigidBody3D" unique_id=515150539]
+gravity_scale = 0.0
+script = ExtResource("1_upba1")
+metadata/_custom_type_script = "uid://uaoxovu60sij"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1187558312]
+replication_config = SubResource("SceneReplicationConfig_p365t")
+
+[node name="flying_chicken" parent="." unique_id=252027896 instance=ExtResource("2_l35q3")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Body" parent="flying_chicken" index="0" unique_id=194376727]
+surface_material_override/0 = SubResource("StandardMaterial3D_l35q3")
+
+[node name="Eyes" parent="flying_chicken" index="1" unique_id=1781775618]
+surface_material_override/0 = SubResource("StandardMaterial3D_upba1")
+
+[node name="Beak" parent="flying_chicken" index="3" unique_id=1015802971]
+surface_material_override/0 = SubResource("StandardMaterial3D_p365t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1180883571]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_l35q3")
+
+[node name="RigidBodyHealthComponent" parent="." unique_id=1997607798 instance=ExtResource("3_upba1")]
+damage_acceleration_threshold = 475.0
+pointy_thing_damage_force_threshold = 0.01
+acceleration_damage_multiplier = 0.3
+max_hp = 20.0
+
+[node name="TargetingComponent" type="Marker3D" parent="." unique_id=1864468113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5954958)
+script = ExtResource("4_p365t")
+vertical_notice_range = 100.0
+metadata/_custom_type_script = "uid://vwa00jlqqm7a"
+
+[node name="Bomb" parent="." unique_id=1057162179 instance=ExtResource("5_8qucf")]
+
+[editable path="flying_chicken"]

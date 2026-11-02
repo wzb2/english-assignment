@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dwb2a7jrubxsb"]
+
+[ext_resource type="Script" uid="uid://vm4v4trxboku" path="res://scripts/rigidbody_health_component.gd" id="1_4ekm8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2wkkf"]
+properties/0/path = NodePath(".:hp")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="RigidBodyHealthComponent" type="Node" unique_id=1997607798]
+script = ExtResource("1_4ekm8")
+pointy_thing_damage_force_threshold = 0.03
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=195922326]
+replication_config = SubResource("SceneReplicationConfig_2wkkf")

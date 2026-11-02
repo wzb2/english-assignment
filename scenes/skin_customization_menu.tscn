@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://cn3dhowir1coi"]
+
+[ext_resource type="Script" uid="uid://bnf86pjfuyld7" path="res://scripts/skin_customization_menu.gd" id="1_ip6ob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2yko"]
+
+[node name="SkinCustomizationMenu" type="CanvasLayer" unique_id=1455924895]
+layer = 2
+script = ExtResource("1_ip6ob")
+metadata/_custom_type_script = "uid://oub1ckr755c7"
+
+[node name="Control" type="Control" parent="." unique_id=172538120]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=21312066]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 349.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=1499280481]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=445009777]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/ColorSelection" unique_id=2088433610]
+layout_mode = 2
+text = "Color"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/ColorSelection" unique_id=1678683901]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/ColorSelection/Panel" unique_id=708498484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/ColorSelection/Panel/ScrollContainer" unique_id=1054986050]
+layout_mode = 2
+
+[node name="HatSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=1437042462]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/HatSelection" unique_id=1348745816]
+layout_mode = 2
+text = "Hat"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/HatSelection" unique_id=1802792637]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/HatSelection/Panel" unique_id=493242117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HatButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/HatSelection/Panel/ScrollContainer" unique_id=124147102]
+layout_mode = 2
+
+[node name="EyebrowSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=1719717783]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/EyebrowSelection" unique_id=26598736]
+layout_mode = 2
+text = "Eyebrows"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/EyebrowSelection" unique_id=2066329514]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/EyebrowSelection/Panel" unique_id=770824609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EyebrowButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/EyebrowSelection/Panel/ScrollContainer" unique_id=539269328]
+layout_mode = 2
+
+[node name="EyeSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=313144768]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/EyeSelection" unique_id=265620453]
+layout_mode = 2
+text = "Eyes"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/EyeSelection" unique_id=235615862]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/EyeSelection/Panel" unique_id=1921246852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EyeButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/EyeSelection/Panel/ScrollContainer" unique_id=443964701]
+layout_mode = 2
+
+[node name="PupilSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=1469124894]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/PupilSelection" unique_id=680948547]
+layout_mode = 2
+text = "Pupils"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/PupilSelection" unique_id=1035622376]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/PupilSelection/Panel" unique_id=190034871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PupilButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/PupilSelection/Panel/ScrollContainer" unique_id=410357273]
+layout_mode = 2
+
+[node name="MouthSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=274678431]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/MouthSelection" unique_id=764955435]
+layout_mode = 2
+text = "Mouth"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/MouthSelection" unique_id=919769343]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/MouthSelection/Panel" unique_id=1830199918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MouthButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/MouthSelection/Panel/ScrollContainer" unique_id=1450099291]
+layout_mode = 2
+
+[node name="OtherStuffSelection" type="VBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=12127296]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/OtherStuffSelection" unique_id=518990287]
+layout_mode = 2
+text = "Other Stuff"
+
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer/OtherStuffSelection" unique_id=380189758]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2yko")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/VBoxContainer/OtherStuffSelection/Panel" unique_id=579587393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OtherStuffButtonContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer/OtherStuffSelection/Panel/ScrollContainer" unique_id=1869402305]
+layout_mode = 2

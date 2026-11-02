@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://k6h32nq2u8o1"]
+
+[ext_resource type="PackedScene" uid="uid://c5bfoo5e6fyym" path="res://models/bed.blend" id="1_on3ft"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ke1up"]
+radius = 0.2
+height = 0.6
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_on3ft"]
+size = Vector3(2.3, 0.3, 1.5)
+
+[node name="Bed" type="StaticBody3D" unique_id=1303722161]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1600754089]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, -0.79421663, 0.14476335, 0.28947473)
+mesh = SubResource("CapsuleMesh_ke1up")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1888955276]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, -0.79421663, 0.14476335, -0.31823277)
+mesh = SubResource("CapsuleMesh_ke1up")
+
+[node name="bed" parent="." unique_id=2031438584 instance=ExtResource("1_on3ft")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1599252124]
+shape = SubResource("BoxShape3D_on3ft")
+
+[editable path="bed"]

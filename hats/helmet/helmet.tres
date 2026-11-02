@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hat" format=3 uid="uid://vq6jg6ws0q8j"]
+
+[ext_resource type="Script" uid="uid://ci48euok4xfmc" path="res://hats/hat.gd" id="1_8khpi"]
+[ext_resource type="Texture2D" uid="uid://bi6lw0lvg3vy4" path="res://hats/helmet/helmet.png" id="1_qa1vx"]
+[ext_resource type="PackedScene" uid="uid://btoi31haf5o1c" path="res://hats/helmet/helmet.glb" id="2_ngfgr"]
+
+[resource]
+script = ExtResource("1_8khpi")
+scene = ExtResource("2_ngfgr")
+icon = ExtResource("1_qa1vx")
+metadata/_custom_type_script = "uid://ci48euok4xfmc"

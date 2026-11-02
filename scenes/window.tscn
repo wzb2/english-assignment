@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c0epychsymp3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnvhp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Window" type="CSGBox3D" unique_id=1286522072]
+operation = 2
+size = Vector3(0.5, 1, 0.5)
+material = SubResource("StandardMaterial3D_pnvhp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=426259342]
+operation = 2
+size = Vector3(0.03, 1, 0.03)
+material = SubResource("StandardMaterial3D_pnvhp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1577104646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+operation = 2
+size = Vector3(1, 0.03, 0.03)
+material = SubResource("StandardMaterial3D_pnvhp")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=365135599]
+operation = 2
+size = Vector3(1, 0.03, 0.03)
+material = SubResource("StandardMaterial3D_pnvhp")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1389525773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+operation = 2
+size = Vector3(1, 0.03, 0.03)
+material = SubResource("StandardMaterial3D_pnvhp")

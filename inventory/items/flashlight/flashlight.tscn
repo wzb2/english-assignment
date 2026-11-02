@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://c6v0k4cg1p765"]
+
+[ext_resource type="Script" uid="uid://diij1h3baq4v7" path="res://inventory/items/flashlight/flashlight.gd" id="1_p1pni"]
+[ext_resource type="Resource" uid="uid://bhnio8282u5xx" path="res://inventory/items/flashlight/flashlight.tres" id="2_ddpym"]
+[ext_resource type="Script" uid="uid://cos8fmpnnuctm" path="res://scripts/item_interact_area.gd" id="3_fcxiw"]
+[ext_resource type="Script" uid="uid://bckobx7fm17y8" path="res://scripts/floater.gd" id="3_mw03b"]
+[ext_resource type="Script" uid="uid://beckuqbvjtgr7" path="res://scripts/floater_mesh.gd" id="4_82l3t"]
+[ext_resource type="PackedScene" uid="uid://tsvbndyft63a" path="res://scenes/floater_point.tscn" id="5_fcxiw"]
+[ext_resource type="Script" uid="uid://dq1grg5euo44f" path="res://scripts/angular_spring.gd" id="7_7yhsq"]
+[ext_resource type="AudioStream" uid="uid://brl88mnj44hau" path="res://audio/flashlight.mp3" id="8_iugii"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_82l3t"]
+properties/0/path = NodePath(".:current_hand")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:synced_position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:synced_rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Lights:visible")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddpym"]
+albedo_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p1pni"]
+material = SubResource("StandardMaterial3D_ddpym")
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.25
+radial_segments = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7yhsq"]
+material = SubResource("StandardMaterial3D_ddpym")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.05
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moxw8"]
+albedo_color = Color(1, 0.97900003, 0.79, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_26d7s"]
+material = SubResource("StandardMaterial3D_moxw8")
+radius = 0.025
+height = 0.01
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vil2b"]
+height = 0.25
+radius = 0.03
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c4j8w"]
+height = 0.3
+radius = 0.06
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_82l3t"]
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.25
+radial_segments = 4
+rings = 0
+cap_top = false
+cap_bottom = false
+
+[node name="Flashlight" type="RigidBody3D" unique_id=526490201 node_paths=PackedStringArray("hand_spring", "mesh_instances", "interact_area")]
+mass = 0.05
+script = ExtResource("1_p1pni")
+item_resource = ExtResource("2_ddpym")
+hand_spring = NodePath("AngularSpring")
+mesh_instances = [NodePath("MeshInstance3D"), NodePath("MeshInstance3D2"), NodePath("MeshInstance3D2/MeshInstance3D3")]
+interact_area = NodePath("Area3D")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=868079956]
+replication_config = SubResource("SceneReplicationConfig_82l3t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=683971185]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.371139e-08, -4.37114e-08, 4.371139e-08, -1, 1.9106859e-15, 0, 0.01875, -0.034113247)
+mesh = SubResource("CylinderMesh_p1pni")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=714865348]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.371139e-08, -4.37114e-08, 4.371139e-08, -1, 1.9106859e-15, 0, 0.01875, -0.13426533)
+mesh = SubResource("CylinderMesh_7yhsq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=1573428797]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8626451e-09, 0.02280575, 0)
+mesh = SubResource("SphereMesh_26d7s")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2128536269]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.371139e-08, -4.37114e-08, 4.371139e-08, -1, 1.9106859e-15, 0, 0.01875, -0.034113247)
+shape = SubResource("CylinderShape3D_vil2b")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1465269990]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.3711395e-08, 4.3711392e-08, -4.371139e-08, 4.3711402e-08, 1, 0, 0.018749999, -0.16460505)
+visible = false
+
+[node name="Light" type="SpotLight3D" parent="Lights" unique_id=895816694]
+light_energy = 100.0
+light_volumetric_fog_energy = 3.0
+shadow_enabled = true
+spot_range = 60.0
+spot_angle = 20.0
+
+[node name="Light2" type="SpotLight3D" parent="Lights" unique_id=1436299856]
+light_energy = 30.0
+light_volumetric_fog_energy = 10.0
+shadow_enabled = true
+spot_range = 70.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=154435626]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.371139e-08, 1.9106859e-15, 1, -1, 4.37114e-08, -4.371139e-08, 0, 0.01875, -0.034113247)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_fcxiw")
+metadata/_custom_type_script = "uid://cos8fmpnnuctm"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=184423271]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_c4j8w")
+
+[node name="Floater" type="Node3D" parent="." unique_id=2015590318]
+script = ExtResource("3_mw03b")
+relative_density = 2.0
+metadata/_custom_type_script = "uid://bckobx7fm17y8"
+
+[node name="FloaterMesh" type="MeshInstance3D" parent="Floater" unique_id=2043289605]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.018826894, -0.034086585)
+mesh = SubResource("CylinderMesh_82l3t")
+script = ExtResource("4_82l3t")
+metadata/_custom_type_script = "uid://beckuqbvjtgr7"
+
+[node name="FloaterPoint" parent="Floater/FloaterMesh" unique_id=1158466977 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0.025)
+
+[node name="FloaterPoint2" parent="Floater/FloaterMesh" unique_id=1544199949 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, 0.125, 1.530758e-18)
+
+[node name="FloaterPoint3" parent="Floater/FloaterMesh" unique_id=93420374 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.061516e-18, 0.125, -0.025)
+
+[node name="FloaterPoint4" parent="Floater/FloaterMesh" unique_id=1966608434 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.125, -4.592274e-18)
+
+[node name="FloaterPoint5" parent="Floater/FloaterMesh" unique_id=598909135 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0.025)
+
+[node name="FloaterPoint6" parent="Floater/FloaterMesh" unique_id=193133340 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, -0.125, 1.530758e-18)
+
+[node name="FloaterPoint7" parent="Floater/FloaterMesh" unique_id=1508352180 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.061516e-18, -0.125, -0.025)
+
+[node name="FloaterPoint8" parent="Floater/FloaterMesh" unique_id=1370962714 instance=ExtResource("5_fcxiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, -0.125, -4.592274e-18)
+
+[node name="AngularSpring" type="Node" parent="." unique_id=1276765639 node_paths=PackedStringArray("body_to_spring")]
+script = ExtResource("7_7yhsq")
+body_to_spring = NodePath("..")
+enabled = true
+spring_stiffness = 0.1
+spring_damping = 0.007
+metadata/_custom_type_script = "uid://dq1grg5euo44f"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1879688898]
+stream = ExtResource("8_iugii")
+volume_db = 50.0

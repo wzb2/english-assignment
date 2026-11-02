@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://sey7x608cfwk"]
+
+[ext_resource type="Script" uid="uid://b38puyedfnjbf" path="res://scripts/ceiling_light.gd" id="1_yhabb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkulu"]
+emission = Color(0.6889167, 0.7, 0.567, 1)
+emission_energy_multiplier = 0.2
+backlight = Color(1, 1, 1, 1)
+
+[node name="CeilingLight" type="CSGBox3D" unique_id=978447064]
+layers = 512
+operation = 2
+size = Vector3(1, 0.05, 1)
+material = SubResource("StandardMaterial3D_tkulu")
+script = ExtResource("1_yhabb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=120173887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08737624, 0)
+light_color = Color(0.7234789, 0.6818131, 0.5833308, 1)
+light_energy = 0.1
+light_size = 2.0
+light_cull_mask = 4294966783
+distance_fade_enabled = true
+distance_fade_begin = 16.0
+distance_fade_shadow = 20.0
+omni_attenuation = 0.5

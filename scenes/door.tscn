@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b0r5qtpvfss4h"]
+
+[ext_resource type="Script" uid="uid://bb60m04tj3alq" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2j1c"]
+size = Vector3(0.7, 1.95, 0.07)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekupd"]
+albedo_color = Color(0.33, 0.20625003, 0.03300001, 1)
+metallic_specular = 0.1
+roughness = 0.26
+
+[sub_resource type="BoxMesh" id="BoxMesh_4hf1k"]
+material = SubResource("StandardMaterial3D_ekupd")
+size = Vector3(0.89, 1.98, 0.07)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gximv"]
+albedo_color = Color(0.95552164, 0.6622937, 3.85046e-07, 1)
+metallic = 0.8
+roughness = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_hfddn"]
+material = SubResource("StandardMaterial3D_gximv")
+radius = 0.05
+height = 0.1
+
+[node name="Door" type="RigidBody3D" unique_id=1163805655]
+angular_damp = 20.0
+script = ExtResource("1_hpvv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=334200659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
+shape = SubResource("BoxShape3D_w2j1c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1244364325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
+mesh = SubResource("BoxMesh_4hf1k")
+
+[node name="Knob" type="Node3D" parent="." unique_id=1703139110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Knob" unique_id=522407002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32093585, 0, -0.06496012)
+mesh = SubResource("SphereMesh_hfddn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Knob" unique_id=1697540533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32069713, 0, 0.065)
+mesh = SubResource("SphereMesh_hfddn")
+skeleton = NodePath("../..")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1640972092]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+node_a = NodePath("..")
+angular_limit/enable = true
+angular_limit/upper = 2.443461
+angular_limit/lower = 0.0
