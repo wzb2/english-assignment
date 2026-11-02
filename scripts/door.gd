@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends MultiplayerRigidBody
 
 class_name Door
 

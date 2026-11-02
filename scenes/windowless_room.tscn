@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bbvn0xpufsj1b"]
 
 [ext_resource type="Material" uid="uid://bm04fcydblc76" path="res://materials/wallpaper.tres" id="1_clodg"]
+[ext_resource type="Script" uid="uid://de04yvwydseta" path="res://scripts/windowless_room.gd" id="1_wtq55"]
 [ext_resource type="PackedScene" uid="uid://sey7x608cfwk" path="res://scenes/ceiling_light.tscn" id="3_23cu2"]
-[ext_resource type="PackedScene" uid="uid://b0r5qtpvfss4h" path="res://scenes/door.tscn" id="3_jprsh"]
+[ext_resource type="PackedScene" uid="uid://b0r5qtpvfss4h" path="res://props/door.tscn" id="3_jprsh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14vil"]
 albedo_color = Color(0.371562, 0.29008332, 0.12495043, 1)
@@ -11,6 +12,7 @@ albedo_color = Color(0.371562, 0.29008332, 0.12495043, 1)
 albedo_color = Color(0.72464263, 0.7246426, 0.7246426, 1)
 
 [node name="WindowlessRoom" type="Node3D" unique_id=521753433]
+script = ExtResource("1_wtq55")
 
 [node name="Room" type="CSGBox3D" parent="." unique_id=1857452327]
 use_collision = true

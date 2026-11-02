@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c2yqe8yxuh6xg"]
+
+[ext_resource type="Texture2D" uid="uid://dxudr6udgoe85" path="res://images/chickens.png" id="1_uw2qc"]
+[ext_resource type="Texture2D" uid="uid://do7d0dhb7ge37" path="res://images/big_chicken_is_watching.png" id="2_bp8j0"]
+[ext_resource type="Texture2D" uid="uid://bg6e6ps4oxo28" path="res://images/math critter.png" id="3_ndydd"]
+[ext_resource type="PackedScene" uid="uid://b0738i04a422r" path="res://props/table.tscn" id="4_ugwnx"]
+
+[node name="Stuff2" type="Node3D" unique_id=1104457118]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=661388731]
+transform = Transform3D(3.5774643e-09, 0, 0.3, 0, 0.3, 0, -0.3, 0, 3.5774643e-09, -4.999, 0.16890848, -2.6348708)
+shaded = true
+double_sided = false
+texture = ExtResource("1_uw2qc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=87095910]
+transform = Transform3D(3.5774643e-09, 0, 0.3, 0, 0.3, 0, -0.3, 0, 3.5774643e-09, -4.999, -0.5097631, -0.3091669)
+shaded = true
+double_sided = false
+texture = ExtResource("2_bp8j0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=263559890]
+transform = Transform3D(3.5774643e-09, 0, 0.3, 0, 0.3, 0, -0.3, 0, 3.5774643e-09, -4.999, -0.5097631, -0.3091669)
+shaded = true
+double_sided = false
+texture = ExtResource("2_bp8j0")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=560587041]
+transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, -4.999, -0.15408456, 2.2345757)
+shaded = true
+double_sided = false
+texture = ExtResource("3_ndydd")
+
+[node name="Table" parent="." unique_id=488525114 instance=ExtResource("4_ugwnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40707517, -1.2717052, -0.9023795)

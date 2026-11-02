@@ -42,6 +42,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.3
 
 [node name="WindowlessRoom2" parent="." unique_id=1027205576 instance=ExtResource("2_tf0pj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.1367083, 1.9699552, 7.5759187)
+enabled = false
 
 [node name="CSGBox3D3" parent="WindowlessRoom2/Room" parent_id_path=PackedInt32Array(1027205576, 1857452327) index="1" unique_id=1227413118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.291, 5.285)

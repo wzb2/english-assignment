@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dky34hwl0erar"]
+
+[ext_resource type="PackedScene" uid="uid://b0738i04a422r" path="res://props/table.tscn" id="1_ccdgk"]
+[ext_resource type="Script" uid="uid://dhuhwe1x8t64" path="res://room_layouts/stuff_3.gd" id="1_o1q5f"]
+
+[node name="Stuff3" type="Node3D" unique_id=982963753]
+script = ExtResource("1_o1q5f")
+
+[node name="Table" parent="." unique_id=488525114 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40707517, -1.2717052, -0.9023795)
+
+[node name="Table3" parent="." unique_id=788576650 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40707517, -1.2717052, 2.7597115)
+
+[node name="Table2" parent="." unique_id=581900599 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40707517, -1.2717052, -3.5390809)
+
+[node name="Table4" parent="." unique_id=1506311277 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7345617, -1.2717052, -0.9023795)
+
+[node name="Table5" parent="." unique_id=800759966 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7345617, -1.2717052, 2.7597115)
+
+[node name="Table6" parent="." unique_id=940598346 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7345617, -1.2717052, -3.5390809)
+
+[node name="Table7" parent="." unique_id=1558102046 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0870972, -1.2717052, -0.9023795)
+
+[node name="Table8" parent="." unique_id=470509214 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0870972, -1.2717052, 2.7597115)
+
+[node name="Table9" parent="." unique_id=782238218 instance=ExtResource("1_ccdgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0870972, -1.2717052, -3.5390809)

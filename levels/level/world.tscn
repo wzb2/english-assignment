@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6qn657465niy" path="res://scenes/side.tscn" id="8_itc6m"]
 [ext_resource type="Material" uid="uid://bm04fcydblc76" path="res://materials/wallpaper.tres" id="9_tkulu"]
 [ext_resource type="PackedScene" uid="uid://du8wh1uv8efnu" path="res://models/roof.blend" id="10_t2idr"]
+[ext_resource type="Texture2D" uid="uid://drklnsb6u374y" path="res://images/eye_of_koot.png" id="11_itc6m"]
 [ext_resource type="Script" uid="uid://c42gs3rnpx3yg" path="res://multiplayer/spawn_placeholder.gd" id="16_5wgw0"]
 [ext_resource type="PackedScene" uid="uid://drvkc04yto6ri" path="res://inventory/items/pistol/pistol.tscn" id="17_jv2ad"]
 [ext_resource type="PackedScene" uid="uid://b4qswahy65ixi" path="res://inventory/items/box_of_bullets/box_of_bullets.tscn" id="19_f0lqv"]
@@ -52,6 +53,9 @@ roughness = 0.26
 [sub_resource type="BoxShape3D" id="BoxShape3D_itc6m"]
 size = Vector3(21, 20, 62.21)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h8qvt"]
+size = Vector3(8, 3, 0.1)
+
 [node name="World" type="Node3D" unique_id=2145048326 node_paths=PackedStringArray("spawn_orgin_marker")]
 script = ExtResource("1_xw7nq")
 spawn_orgin_marker = NodePath("Marker3D")
@@ -62,46 +66,46 @@ spawn_orgin_marker = NodePath("Marker3D")
 travel_cost = 2.0
 
 [node name="BackpackPlaceholder" type="Marker3D" parent="." unique_id=1507781535]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8607776, 1.909595, -7.4588437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.791522, 1.909595, 35.66037)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("21_e2uyj")
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="PistolPlaceholder" type="Marker3D" parent="." unique_id=677211505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803987, -8.048313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6523, 0.803987, 35.0709)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("17_jv2ad")
 disable = true
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="FlashlightPlaceholder" type="Marker3D" parent="." unique_id=1811755845]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76366925, 1.6378605, -8.865341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.415969, 1.6378605, 34.253876)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("20_8dsq4")
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="FlashlightPlaceholder2" type="Marker3D" parent="." unique_id=2130058980]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56405187, 1.6378605, -8.865341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2163515, 1.6378605, 34.253876)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("20_8dsq4")
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="BoxOfBulletsPlaceholder" type="Marker3D" parent="." unique_id=1788278226]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8663235, 2.2402892, -7.4928827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.785976, 2.2402892, 35.62633)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("19_f0lqv")
 disable = true
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="SwordPlaceholder" type="Marker3D" parent="." unique_id=262367419]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19020796, 2.4582453, -9.423984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.462091, 2.4582453, 33.695232)
 script = ExtResource("16_5wgw0")
 spawn_scene = ExtResource("20_1vorj")
 disable = true
 metadata/_custom_type_script = "uid://c42gs3rnpx3yg"
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1150581307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7135288, 1.1753105, -6.752613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3658285, 1.1753105, 36.3666)
 
 [node name="Side" parent="." unique_id=2140719088 instance=ExtResource("8_itc6m")]
 
@@ -198,3 +202,55 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.
 use_collision = true
 size = Vector3(0.25, 6.5, 20.970703)
 material = ExtResource("9_tkulu")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D3" unique_id=1624963202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83048177, 0)
+operation = 2
+use_collision = true
+size = Vector3(0.25, 2, 4)
+material = ExtResource("9_tkulu")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D3" unique_id=1743703628]
+transform = Transform3D(0.9492006, -0.20382795, -0.23973423, 2.8313949e-08, 0.76185495, -0.6477477, 0.31467175, 0.6148425, 0.7231532, 0, -0.10025668, -0.6538677)
+radius = 0.3
+height = 4.5249023
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D3" unique_id=1409103245]
+transform = Transform3D(0.97570306, 0.219097, -9.577033e-09, 0, -4.3711392e-08, -1, -0.21909697, 0.9757032, -4.2649337e-08, -0.15850449, -1.5519531, 0.0466547)
+radius = 0.3
+height = 4.5249023
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D3" unique_id=1140200612]
+transform = Transform3D(0.97436994, 0.22495104, 0, -0.2227618, 0.96488756, -0.13917312, -0.03130713, 0.13560611, 0.9902682, -0.69296646, -1.7801766, 1.7140894)
+radius = 0.3
+height = 4.5249023
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D3" unique_id=1309502201]
+transform = Transform3D(0.94237906, 0.2835541, -0.17753543, -0.33454707, 0.79873794, -0.50009596, 4.1439634e-09, 0.5306739, 0.8475761, -0.8259926, -1.2894063, -0.017816544)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D3" unique_id=1976543040]
+transform = Transform3D(0.65706456, -0.1827017, -0.73135924, -0.62827164, 0.40341896, -0.66522765, 0.41658244, 0.8965898, 0.15028602, -0.8259926, -1.2894063, 1.0722733)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D3" unique_id=1646197052]
+transform = Transform3D(0.7913224, -0.4390014, 0.42554277, 0.44751313, -0.058348965, -0.8923718, 0.41658238, 0.8965897, 0.15028608, -0.98337936, -0.68168116, 0.59133625)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D3" unique_id=1729330912]
+transform = Transform3D(-0.8381298, -0.009575237, 0.5453868, -0.33454707, 0.79873794, -0.50009596, -0.43083265, -0.6016029, -0.6726495, -1.1840668, -1.2894063, -0.88112354)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D3" unique_id=1645739066]
+transform = Transform3D(-0.39392653, 0.57238954, 0.71916074, -0.6282716, 0.4034189, -0.6652276, -0.67089224, -0.7138792, 0.20069858, -0.6857033, -1.2894063, -1.8506241)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D3" unique_id=2060299053]
+transform = Transform3D(-0.51333237, 0.8003363, -0.30976054, 0.4475131, -0.058348935, -0.8923718, -0.73227173, -0.59670514, -0.3282086, -0.7656021, -0.68168116, -1.3509369)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=355853682]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.41391, 8.159636, -12.048176)
+shaded = true
+double_sided = false
+texture = ExtResource("11_itc6m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=918220029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.880112, 1.4016771, 37.99223)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=232776245]
+shape = SubResource("BoxShape3D_h8qvt")

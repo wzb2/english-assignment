@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://yiq1mfkw8rya"]
+
+[ext_resource type="Texture2D" uid="uid://drklnsb6u374y" path="res://images/eye_of_koot.png" id="1_x1mgc"]
+[ext_resource type="PackedScene" uid="uid://c6v0k4cg1p765" path="res://inventory/items/flashlight/flashlight.tscn" id="2_8qtrq"]
+
+[node name="Stuff6" type="Node3D" unique_id=912380438]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2102987631]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.2572656, -0.587, -4.999)
+shaded = true
+double_sided = false
+texture = ExtResource("1_x1mgc")
+
+[node name="Flashlight" parent="." unique_id=526490201 instance=ExtResource("2_8qtrq")]
+transform = Transform3D(-0.61958736, 0, 0.7849277, 0, 1, 0, -0.7849277, 0, -0.61958736, 4.2425222, -0.7411412, -4.6063747)

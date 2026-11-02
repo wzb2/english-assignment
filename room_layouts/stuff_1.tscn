@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6pod5sik8736"]
+
+[ext_resource type="Texture2D" uid="uid://drklnsb6u374y" path="res://images/eye_of_koot.png" id="1_4vf46"]
+[ext_resource type="PackedScene" uid="uid://k6h32nq2u8o1" path="res://props/bed.tscn" id="2_rw2n8"]
+[ext_resource type="PackedScene" uid="uid://b0738i04a422r" path="res://props/table.tscn" id="3_rh2b5"]
+
+[node name="Stuff1" type="Node3D" unique_id=1591071090]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1401227831]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, -3.54, -0.587, 4.999)
+shaded = true
+double_sided = false
+texture = ExtResource("1_4vf46")
+
+[node name="Bed" parent="." unique_id=1303722161 instance=ExtResource("2_rw2n8")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.5696723, -1.275602, 3.6566825)
+
+[node name="Bed2" parent="." unique_id=1237205241 instance=ExtResource("2_rw2n8")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.5696723, -1.275602, 0.74961996)
+
+[node name="Table" parent="." unique_id=488525114 instance=ExtResource("3_rh2b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.394967, -1.2717052, -2.8890023)
