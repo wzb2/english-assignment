@@ -26,6 +26,7 @@ background_mode = 2
 sky = SubResource("Sky_vnv7o")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_sun_scatter = 0.2
 fog_density = 0.001
 fog_sky_affect = 0.3
@@ -57,12 +58,13 @@ script = ExtResource("2_ukwr8")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=165824602]
 transform = Transform3D(-0.9537168, 0.2289992, 0.19489351, -5.666044e-08, -0.6481199, 0.7615382, 0.300706, 0.7262919, 0.6181229, 0, 0, 0)
+visible = false
 light_color = Color(1, 1, 0.913725, 1)
 light_volumetric_fog_energy = 10.0
 shadow_enabled = true
 
 [node name="Moon" type="DirectionalLight3D" parent="." unique_id=736125572]
-transform = Transform3D(0.96818167, -0.22526963, 0.108986504, 0.22899912, 0.97315866, -0.022843786, -0.10091515, 0.047074746, 0.99378073, 0, 0, 0)
+transform = Transform3D(0.96818155, -0.22526962, 0.108986504, 0.22899911, 0.97315854, -0.022843786, -0.10091514, 0.047074743, 0.99378073, 0, 0, 0)
 light_color = Color(0.62, 0.62, 0.5642, 1)
 light_energy = 0.8
 light_volumetric_fog_energy = 12.5
@@ -81,7 +83,8 @@ freeze = true
 sun = NodePath("../Sun")
 moon = NodePath("../Moon")
 world_environment = NodePath("../WorldEnvironment")
-day = 0.865
+seconds_per_day = 10.0
+day = -0.17
 
 [node name="LoadingScreen" parent="." unique_id=198839474 instance=ExtResource("7_vnv7o")]
 
