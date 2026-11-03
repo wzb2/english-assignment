@@ -4,7 +4,6 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_on3ft"]
 bounce = 0.8
-absorbent = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ke1up"]
 radius = 0.2

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du8wh1uv8efnu" path="res://models/roof.blend" id="10_t2idr"]
 [ext_resource type="Texture2D" uid="uid://drklnsb6u374y" path="res://images/eye_of_koot.png" id="11_itc6m"]
 [ext_resource type="Texture2D" uid="uid://b8mb05alomd5u" path="res://images/grass.png" id="12_h8qvt"]
+[ext_resource type="Shader" uid="uid://wo0hli0lgyv2" path="res://materials/fog.gdshader" id="13_au6cd"]
 [ext_resource type="Script" uid="uid://c42gs3rnpx3yg" path="res://multiplayer/spawn_placeholder.gd" id="16_5wgw0"]
 [ext_resource type="PackedScene" uid="uid://drvkc04yto6ri" path="res://inventory/items/pistol/pistol.tscn" id="17_jv2ad"]
 [ext_resource type="PackedScene" uid="uid://b4qswahy65ixi" path="res://inventory/items/box_of_bullets/box_of_bullets.tscn" id="19_f0lqv"]
@@ -83,8 +84,11 @@ size = Vector3(21, 20, 62.21)
 size = Vector3(8, 3, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_084d6"]
-albedo_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+albedo_color = Color(0.38928708, 0.38928646, 0.38928658, 1)
 albedo_texture = ExtResource("12_h8qvt")
+distance_fade_mode = 2
+distance_fade_min_distance = 150.0
+distance_fade_max_distance = 75.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_rvvqk"]
 material = SubResource("StandardMaterial3D_084d6")
@@ -92,7 +96,18 @@ size = Vector3(1000, 1, 1000)
 
 [sub_resource type="FogMaterial" id="FogMaterial_h8qvt"]
 density = 2.0
-albedo = Color(0.33118287, 0.47661483, 0.67761123, 1)
+albedo = Color(0.24318075, 0.3713165, 0.5484592, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l71n6"]
+render_priority = 0
+shader = ExtResource("13_au6cd")
+shader_parameter/fade_color = Color(0, 0, 0, 1)
+shader_parameter/fade_start = 15.0000007125
+shader_parameter/fade_end = 50.000002375
+
+[sub_resource type="QuadMesh" id="QuadMesh_084d6"]
+material = SubResource("ShaderMaterial_l71n6")
+size = Vector2(2, 2)
 
 [node name="World" type="Node3D" unique_id=2145048326 node_paths=PackedStringArray("spawn_orgin_marker")]
 script = ExtResource("1_xw7nq")
@@ -283,7 +298,89 @@ shape = SubResource("BoxShape3D_h8qvt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24704838, 0)
 mesh = SubResource("BoxMesh_rvvqk")
 
-[node name="FogVolume" type="FogVolume" parent="." unique_id=37828139]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.329894, 4.779066, 48.06471)
-size = Vector3(20, 10, 19.252441)
+[node name="FogVolume2" type="FogVolume" parent="." unique_id=1006643525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.880417, 4.5532684, 83.62425)
+visible = false
+size = Vector3(54.423325, 10, 19.252441)
 material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume5" type="FogVolume" parent="." unique_id=1598697569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.300156, 4.5532684, 14.419159)
+visible = false
+size = Vector3(38.090206, 10, 118.639404)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume6" type="FogVolume" parent="." unique_id=1920989112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.8116, 4.5532684, 14.419159)
+visible = false
+size = Vector3(38.090206, 10, 118.639404)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume3" type="FogVolume" parent="." unique_id=383594151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.03953, 4.5532684, 83.62425)
+visible = false
+size = Vector3(54.423325, 10, 19.252441)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume7" type="FogVolume" parent="." unique_id=1542571904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.880417, 4.5532684, -57.318527)
+visible = false
+size = Vector3(54.423325, 10, 19.252441)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume8" type="FogVolume" parent="." unique_id=364844740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.03953, 4.5532684, -57.318527)
+visible = false
+size = Vector3(54.423325, 10, 19.252441)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=37828139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.742095, 4.779066, 55.9167)
+visible = false
+size = Vector3(96, 10, 34.96)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume9" type="FogVolume" parent="." unique_id=832706451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.742095, 4.779066, 41.96547)
+visible = false
+size = Vector3(15, 10, 6.9090576)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="FogVolume4" type="FogVolume" parent="." unique_id=80242915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.742095, 4.779066, -39.201412)
+visible = false
+size = Vector3(96, 10, 34.96)
+material = SubResource("FogMaterial_h8qvt")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=1438804426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.334778, 10.379046, 14.763514)
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1471408268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.812042, -5.7054834, -7.764818)
+radius = 0.75
+height = 12.0
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=170535654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.812, -5.7057323, -7.764818)
+radius = 0.75
+height = 12.0
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1422402062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.812042, -5.7054834, 7.7679996)
+radius = 0.75
+height = 12.0
+sides = 16
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=2072026633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.812, -5.7057323, 7.7679996)
+radius = 0.75
+height = 12.0
+sides = 16
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=382933643]
+visible = false
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_084d6")

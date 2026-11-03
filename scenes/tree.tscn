@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://vnxf34507pow"]
+[gd_scene format=3 uid="uid://vnxf34507pow"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ict6q"]
 frequency = 0.2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_avsvi"]
+noise = SubResource("FastNoiseLite_ict6q")
 seamless = true
 as_normal_map = true
 bump_strength = 0.5
-noise = SubResource("FastNoiseLite_ict6q")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vplca"]
 albedo_color = Color(0.360784, 0.215686, 0, 1)
@@ -27,10 +27,10 @@ frequency = 0.0753
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qd6xs"]
 width = 128
+noise = SubResource("FastNoiseLite_viusy")
 seamless = true
 as_normal_map = true
 bump_strength = 1.0
-noise = SubResource("FastNoiseLite_viusy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ake3r"]
 albedo_color = Color(0, 0.317647, 0, 1)
@@ -48,17 +48,18 @@ radial_segments = 16
 height = 8.0
 radius = 0.3
 
-[node name="Tree" type="StaticBody3D"]
+[node name="Tree" type="StaticBody3D" unique_id=801608295]
 
-[node name="Trunk" type="MeshInstance3D" parent="."]
+[node name="Trunk" type="MeshInstance3D" parent="." unique_id=124923651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 mesh = SubResource("CylinderMesh_ict6q")
 skeleton = NodePath("../Leaves")
 
-[node name="Leaves" type="MeshInstance3D" parent="."]
+[node name="Leaves" type="MeshInstance3D" parent="." unique_id=1541406313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 mesh = SubResource("CylinderMesh_avsvi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1528316761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("CylinderShape3D_ict6q")
+disabled = true
