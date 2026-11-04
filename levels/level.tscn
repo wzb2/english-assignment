@@ -54,7 +54,7 @@ environment = SubResource("Environment_pb8y7")
 script = ExtResource("2_ukwr8")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=944463497]
-_spawnable_scenes = PackedStringArray("uid://bf2yp6nc5785d", "uid://phctd7wwaxyq", "uid://dxngx2j6d5hgy", "uid://b4qswahy65ixi", "uid://c6v0k4cg1p765", "uid://drvkc04yto6ri", "uid://1ui0sa187b0u", "uid://cp2ywm1vxlptk", "uid://ct4cwl717854b", "uid://v50tjuu3aj6q", "uid://bdijkc4xdbr31", "uid://dbepnfahyqr6v", "uid://crkwwuqygff4y")
+_spawnable_scenes = PackedStringArray("uid://bf2yp6nc5785d", "uid://phctd7wwaxyq", "uid://dxngx2j6d5hgy", "uid://b4qswahy65ixi", "uid://c6v0k4cg1p765", "uid://drvkc04yto6ri", "uid://1ui0sa187b0u", "uid://cp2ywm1vxlptk", "uid://ct4cwl717854b", "uid://v50tjuu3aj6q", "uid://bdijkc4xdbr31", "uid://dbepnfahyqr6v", "uid://crkwwuqygff4y", "uid://b6pod5sik8736", "uid://c2yqe8yxuh6xg", "uid://dky34hwl0erar", "uid://2micxqdsxsaq", "uid://dvsg4gcqvu718", "uid://yiq1mfkw8rya")
 spawn_path = NodePath("..")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=165824602]

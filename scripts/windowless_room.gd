@@ -12,8 +12,9 @@ const STUFF_6: PackedScene = preload("uid://yiq1mfkw8rya")
 @onready var room_layouts: Array[PackedScene] = [STUFF_1, STUFF_2, STUFF_3, STUFF_4, STUFF_5, STUFF_6]
 
 func _ready() -> void:
-	if enabled:
-		if randf() > 0.4:
-			var layout: Node3D = room_layouts[randi_range(0, room_layouts.size() - 1)].instantiate()
-			layout.global_transform = global_transform
-			get_tree().current_scene.add_child(layout)
+	if multiplayer.is_server():
+		if enabled:
+			if randf() > 0.4:
+				var layout: Node3D = room_layouts[randi_range(0, room_layouts.size() - 1)].instantiate()
+				layout.global_transform = global_transform
+				get_tree().current_scene.add_child(layout)

@@ -44,6 +44,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_72lhy")
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_p84df"]
+properties/0/path = NodePath(".:synced_position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:synced_rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:visible")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
 [node name="Table" type="RigidBody3D" unique_id=1014202420]
 script = ExtResource("1_p84df")
 metadata/_custom_type_script = "uid://b57xhtai153w2"
@@ -57,5 +68,8 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1.3208332, 0)
 
 [node name="Cylinder" parent="table2" index="0" unique_id=134636100]
 mesh = SubResource("ArrayMesh_eotx8")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=465281836]
+replication_config = SubResource("SceneReplicationConfig_p84df")
 
 [editable path="table2"]
