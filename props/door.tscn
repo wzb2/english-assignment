@@ -46,6 +46,7 @@ shape = SubResource("BoxShape3D_w2j1c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1244364325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
+layers = 16
 mesh = SubResource("BoxMesh_4hf1k")
 
 [node name="Knob" type="Node3D" parent="." unique_id=1703139110]
@@ -53,11 +54,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Knob" unique_id=522407002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32093585, 0, -0.06496012)
+layers = 16
 mesh = SubResource("SphereMesh_hfddn")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Knob" unique_id=1697540533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32069713, 0, 0.065)
+layers = 16
 mesh = SubResource("SphereMesh_hfddn")
 skeleton = NodePath("../..")
 

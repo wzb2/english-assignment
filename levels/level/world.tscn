@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drklnsb6u374y" path="res://images/eye_of_koot.png" id="11_itc6m"]
 [ext_resource type="Texture2D" uid="uid://b8mb05alomd5u" path="res://images/grass.png" id="12_h8qvt"]
 [ext_resource type="Shader" uid="uid://wo0hli0lgyv2" path="res://materials/fog.gdshader" id="13_au6cd"]
+[ext_resource type="ArrayOccluder3D" uid="uid://mlub5yd84w2q" path="res://levels/level/world.occ" id="14_084d6"]
 [ext_resource type="Script" uid="uid://c42gs3rnpx3yg" path="res://multiplayer/spawn_placeholder.gd" id="16_5wgw0"]
 [ext_resource type="PackedScene" uid="uid://drvkc04yto6ri" path="res://inventory/items/pistol/pistol.tscn" id="17_jv2ad"]
 [ext_resource type="PackedScene" uid="uid://b4qswahy65ixi" path="res://inventory/items/box_of_bullets/box_of_bullets.tscn" id="19_f0lqv"]
@@ -384,3 +385,7 @@ sides = 16
 visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_084d6")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1188556125]
+occluder = ExtResource("14_084d6")
+bake_mask = 4294967279
