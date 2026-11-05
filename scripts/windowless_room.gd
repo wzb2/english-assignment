@@ -17,4 +17,4 @@ func _ready() -> void:
 			if randf() > 0.4:
 				var layout: Node3D = room_layouts[randi_range(0, room_layouts.size() - 1)].instantiate()
 				layout.global_transform = global_transform
-				get_tree().current_scene.add_child(layout)
+				get_tree().current_scene.add_child(layout, true)
